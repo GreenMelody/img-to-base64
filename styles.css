@@ -1,0 +1,66 @@
+.row {
+    display: flex;
+    align-items: stretch; /* 두 열의 높이를 동일하게 맞춤 */
+}
+
+#paste-img {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    flex: 1;
+    height: 300px; /* 이미지 붙여넣기 영역의 고정된 높이 */
+    overflow-y: auto;
+    user-select: none; /* 사용자가 텍스트를 선택할 수 없도록 설정 */
+    cursor: default; /* 커서를 기본 커서로 설정 */
+}
+
+#export-base64 {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    flex: 1;
+    height: 300px; /* Base64 출력 영역의 고정된 높이 */
+    overflow-y: auto; /* 스크롤바 생성 */
+}
+
+#paste-base64 {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    flex: 1;
+    height: 200px; /* Base64 붙여넣기 영역의 고정된 높이 */
+    overflow-y: auto; /* 스크롤바 생성 */
+}
+
+#export-img {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+#export-img img {
+    width: auto;
+    height: auto;
+}
+
+/* Toast Container Styling for Center-Top Position */
+.toast-container {
+    position: fixed;
+    top: 10px; /* 화면 상단에서 20px 아래에 위치 */
+    left: 50%;
+    transform: translateX(-20%); /* 수평 가운데 정렬 */
+    z-index: 1060; /* 다른 요소보다 위에 표시되도록 설정 */
+    width: auto; /* 컨테이너의 너비를 내용에 맞게 자동 조정 */
+    max-width: 90%; /* 최대 너비를 화면의 90%로 제한 */
+}
+
+.toast.show {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.toast {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
